@@ -2,20 +2,48 @@
     ViewData["Title"] = "Home Page";
 }
     <head>
+        <link rel="icon" href="~/favicon.ico" />
+        <script src="./js/particles.js"></script>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/site.css" link rel="stylesheet" />
+        <style>
+            .bg {
+                position: fixed;
+                width: auto;
+                height: auto;
+            }
+
+            .fontType {
+                font-family: Calibri;
+                font-size: large;
+            }
+        </style>
     </head>
-    <script src="./js/particles.js"></script>
-    <body id="particles-js">
-        <div id="particles-js">
-            <script src="./js/particles.js"></script>
-            <h1>WyrmwoodSoft</h1>
-            <img src="~/images/corporateJinx.png" alt="Jinx" style="float:right;" />
-            <p>WyrmwoodSoft is a Detroit based software development and design studio, specializing in:</p>
-            <ul>
-                <li>API Development (.Net CORE)</li>
-                <li>Unity game design & development</li>
-                <li>Azure cloud services</li>
-                <li>DEV|SEC|OPS lifecycle</li>
-            </ul>
+    <body id="particles-js" class="bg">
+        <div class="bg">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h1 class="card-title">Project34</h1>
+                                <p class="fontType">Project34 is a Detroit-based software development and design studio. We specialize in: </p>
+                                <ul>
+                                    <li>API Development (.Net CORE)</li>
+                                    <li>Unity game design & development</li>
+                                    <li>Azure cloud services</li>
+                                    <li>DEV|SEC|OPS lifecycle</li>
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="~/images/corporateJinx.png" alt="Jinx" />
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </body>
 

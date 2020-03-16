@@ -1,9 +1,10 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <script src="./js/particles.js"></script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Project34</title>
+    <title>@ViewData["Title"]Project34</title>
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -30,7 +31,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                    @*<li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>*@
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></li>
@@ -43,10 +44,10 @@
 
     <div class="container body-content">
         @RenderBody()
-        <hr />
+        @*<hr />
         <footer>
             <p>&copy; 2020 - Project34</p>
-        </footer>
+        </footer>*@
     </div>
 
     <environment include="Development">

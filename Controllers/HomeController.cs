@@ -17,6 +17,7 @@ namespace Project34.Controllers
         }
 
         [HttpGet]
+        [Route("About")]
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
@@ -25,6 +26,7 @@ namespace Project34.Controllers
         }
 
         [HttpGet]
+        [Route("Contact")]
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";
@@ -33,6 +35,7 @@ namespace Project34.Controllers
         }
 
         [HttpGet]
+        [Route("Privacy")]
         public IActionResult Privacy()
         {
             return View();

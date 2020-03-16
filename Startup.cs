@@ -48,7 +48,8 @@ namespace Project34
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
+            app.UseDefaultFiles();
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
