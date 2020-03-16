@@ -1,34 +1,70 @@
 ﻿@{
     ViewData["Title"] = "Contact";
 }
-<head>
-    <script src="./js/particles.js"></script>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/site.css" link rel="stylesheet" />
-    <style>
-        .bg {
-            position: fixed;
-            width: auto;
-            height: auto;
-        }
-    </style>
-</head>
-<body id="particles-js" class="bg">
-    <h2>@ViewData["Title"]</h2>
-    <h3>@ViewData["Message"]</h3>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="./js/particles.js"></script>
+        @*<link href="css/bootstrap.min.css" rel="stylesheet">*@
+        <link href="css/site.css" link rel="stylesheet" />
+        <style>
+            .bg {
+                position: fixed;
+                width: auto;
+                height: auto;
+            }
+        </style>
+    </head>
 
-    <address>
-        One Microsoft Way<br />
-        Redmond, WA 98052-6399<br />
-        <abbr title="Phone">P:</abbr>
-        425.555.0100
-    </address>
+    <body id="particles-js" class="bg">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title">Contact Us:</h1>
+                        <p>Gmail: <i>coming soon</i></p>
+                        <a href="null">
+                            <img src="~/images/discord-computer-icons-android-icons-combat-arena-android.jpg" />
+                        </a>
+                        <a href="https://twitter.com/_foxacid">
+                            <img src="~/images/43-twitter-512.png" />
+                        </a>
+                        <a href="https://github.com/WyrmwoodSoft">
+                            <img src="~/images/GitHub-Mark-64px.png" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-100"></div>
+        <br /><br />
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <button>See who's online</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+            <div id="result" style="color:black"></div>
+    </body>
 
-    <address>
-        <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
-        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-    </address>
-</body>
+<script>
+    var url = "https://localhost:44300/Contact/Discord";
+    $(document).ready(function(){
+        $("button").click(function () {          
+            $.get(url, function (data, status) {
+                //var x = JSON.parse(data);
+                var x = data;
+                document.getElementById("result").innerHTML = x;
+                $("result").append(x);
+
+          console.log("Data: " + data + "\nStatus: " + status);
+    });
+  });
+});
+</script>
 
 <script>
     particlesJS("particles-js", {

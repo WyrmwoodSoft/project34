@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Project34.Models;
@@ -10,6 +11,9 @@ namespace Project34.Controllers
 {
     public class HomeController : Controller
     {
+        public HttpClient client = new HttpClient();
+        public const string DiscordUrl = @"https://discordapp.com/api/guilds/475384812212060214/widget.json";
+
         [HttpGet]
         public IActionResult Index()
         {
@@ -32,6 +36,16 @@ namespace Project34.Controllers
             ViewData["Message"] = "Your contact page.";
 
             return View();
+        }
+
+        [HttpGet]
+        [Route("Contact/Discord")]
+        public async Task<string> Discord()
+        {
+            var discordServer = await client.GetAsync(DiscordUrl);
+            var response = discordServer.Content.ReadAsStringAsync().Result;
+
+            return response.ToString();
         }
 
         [HttpGet]
