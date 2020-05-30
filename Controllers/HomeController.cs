@@ -5,6 +5,8 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Project34.Models;
 
 namespace Project34.Controllers
@@ -44,13 +46,28 @@ namespace Project34.Controllers
         {
             var discordServer = await client.GetAsync(DiscordUrl);
             var response = discordServer.Content.ReadAsStringAsync().Result;
+            dynamic usernames = JsonConvert.DeserializeObject(response);
 
-            return response.ToString();
+            var userOne = usernames["members"][0]["username"].ToString();
+            var userTwo = usernames["members"][1]["username"].ToString();
+            var userThree = usernames["members"][2]["username"].ToString();
+            var userFour = usernames["members"][3]["username"].ToString();
+
+            string whosOnline = userOne + " ~ " + userTwo + " ~ " + userThree + " ~ " + userFour;
+
+            return whosOnline;
         }
 
         [HttpGet]
         [Route("Privacy")]
         public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        [Route("ELM")]
+        public IActionResult Elm()
         {
             return View();
         }
