@@ -51,9 +51,9 @@ namespace Project34.Controllers
             var userOne = usernames["members"][0]["username"].ToString();
             var userTwo = usernames["members"][1]["username"].ToString();
             var userThree = usernames["members"][2]["username"].ToString();
-            var userFour = usernames["members"][3]["username"].ToString();
+            //var userFour = usernames["members"][3]["username"].ToString();
 
-            string whosOnline = userOne + " ~ " + userTwo + " ~ " + userThree + " ~ " + userFour;
+            string whosOnline = userOne + " || " + userTwo + " || " + userThree; // + " || " + userFour;
 
             return whosOnline;
         }
